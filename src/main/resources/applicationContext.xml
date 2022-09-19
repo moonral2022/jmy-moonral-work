@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:p="http://www.springframework.org/schema/p"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+    http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <!-- 手动装配Bean -->
+    <bean id="address" class="com.moonral.work.spring.Address"
+          p:city="WhuHan" p:street="Bayi"></bean>
+
+    <bean id="car" class="com.moonral.work.spring.Car"
+          p:brand="Audi" p:price="300000"></bean>
+
+    <bean id="person" class="com.moonral.work.spring.Person"
+          p:name="Roger" p:address-ref="address" p:car-ref="car"></bean>
+
+    <bean id="beanId2" class="com.moonral.work.spring.Company" autowire="autodetect">
+    </bean>
+    <bean id="emp" class="com.moonral.work.spring.Employee">
+        <property name="id" value="1"></property>
+        <property name="name" value="小明"></property>
+    </bean>
+
+    <!--<bean id="boss" class="com.moonral.work.spring.Boss" parent="emp" primary="true">
+        <property name="title" value="CTO"></property>
+    </bean>-->
+
+
+
+</beans>
